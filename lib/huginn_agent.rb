@@ -1,3 +1,5 @@
+require 'huginn_agent/version'
+
 class HuginnAgent
   def self.register(*paths)
     @paths ||= []
