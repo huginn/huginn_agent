@@ -7,7 +7,7 @@ def shell_out(command, message = nil, output_on_success = false)
   end
   if $?.success?
     puts "\e[32m [OK]\e[0m" if message
-    puts output #if output_on_success
+    puts output if output_on_success
   else
     puts "\e[31m [FAIL]\e[0m" if message
     puts "Tried executing '#{command}'"
