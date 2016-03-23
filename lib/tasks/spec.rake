@@ -5,7 +5,7 @@ def shell_out(command, message = nil, output_on_success = false)
   output = `#{command} 2>&1`
   if $?.success?
     puts "\e[32m [OK]\e[0m" if message
-    puts output if output_on_success
+    puts output #if output_on_success
   else
     puts "\e[31m [FAIL]\e[0m" if message
     puts "Tried executing '#{command}'"
@@ -30,6 +30,7 @@ task :spec do
     shell_out "echo \"gem 'huginn_nlp_agents', path: '../../'\" >> Gemfile"
 
     shell_out "bundle  --without development production -j 4", 'Installing ruby gems ...'
+    shell_out('bundle exec rake db:create db:migrate', 'Creating database ...') if ENV['CI']
     shell_out "bundle exec rspec ../*.rb", 'Running specs ...', true
   end
 end
