@@ -27,9 +27,11 @@ task :spec do
     shell_out "cp .env spec/huginn"
   end
 
+  gem_name = File.basename(Dir['*.gemspec'].first, '.gemspec')
+
   Dir.chdir('spec/huginn') do
     shell_out "git fetch && git reset --hard #{BRANCH}", 'Resetting Huginn source ...'
-    shell_out "echo \"gem 'huginn_nlp_agents', path: '../../'\" >> Gemfile"
+    shell_out "echo \"gem '#{gem_name}', path: '../../'\" >> Gemfile"
 
     shell_out "bundle install --without development production -j 4", 'Installing ruby gems ...'
     shell_out('bundle exec rake db:create db:migrate', 'Creating database ...') if ENV['CI']

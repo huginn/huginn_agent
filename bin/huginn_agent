@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "huginn_agent/cli"
+
+HuginnAgent::CLI.start

@@ -13,11 +13,12 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/cantino/huginn"
   spec.license       = "MIT"
 
-  spec.files         = Dir['LICENSE.txt', 'lib/**/*']
-  spec.executables   = Dir['bin/*']
+  spec.files         = Dir['LICENSE.txt', 'lib/**/*', 'bin/*']
+  spec.executables   = Dir['bin/*'].map { |p| File.basename(p) }
   spec.test_files    = Dir['spec/**/*']
   spec.require_paths = ["lib"]
 
+  spec.add_runtime_dependency 'thor'
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.1"

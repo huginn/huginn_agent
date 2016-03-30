@@ -1,0 +1,4 @@
+require 'huginn_agent'
+
+#HuginnAgent.load '<%= config[:gem_name] %>/concerns/my_agent_concern'
+HuginnAgent.register '<%= config[:gem_name] %>/<%= config[:agent_file_name] %>'
