@@ -1,3 +1,5 @@
+require 'huginn_agent/helper'
+
 class HuginnAgent
   class SpecRunner
     attr_reader :gem_name
@@ -41,16 +43,17 @@ class HuginnAgent
       end
     end
 
-    def shell_out(command, message = nil, output_on_success = false)
+    def shell_out(command, message = nil, streaming_output = false)
       print message if message
-      output = Bundler.with_clean_env do
+
+      (status, output) = Bundler.with_clean_env do
         ENV['ADDITIONAL_GEMS'] = "#{gem_name}(path: ../../)"
         ENV['RAILS_ENV'] = 'test'
-        `#{command} 2>&1`
+        HuginnAgent::Helper.open3(command, streaming_output)
       end
-      if $?.success?
+
+      if status == 0
         puts "\e[32m [OK]\e[0m" if message
-        puts output if output_on_success
       else
         puts "\e[31m [FAIL]\e[0m" if message
         puts "Tried executing '#{command}'"
