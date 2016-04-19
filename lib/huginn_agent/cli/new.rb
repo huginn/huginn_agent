@@ -1,4 +1,5 @@
 require 'pathname'
+require 'huginn_agent/helper'
 
 module HuginnAgent
   class CLI::New
@@ -75,6 +76,8 @@ module HuginnAgent
       thor.say "Initializing git repo in #{target}"
       Dir.chdir(target) { `git init`; `git add .` }
 
+      thor.say 'Installing dependencies'
+      Dir.chdir(target) { HuginnAgent::Helper.open3('bundle install') }
     end
   end
 end
