@@ -2,7 +2,11 @@ require 'huginn_agent/version'
 
 class HuginnAgent
   class << self
-    def load_tasks
+    attr_accessor :branch, :remote
+
+    def load_tasks(options)
+      @branch = options[:branch] || 'master'
+      @remote = options[:remote] || 'https://github.com/cantino/huginn.git'
       Rake.add_rakelib File.join(File.expand_path('../', __FILE__), 'tasks')
     end
 
