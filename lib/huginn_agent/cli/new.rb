@@ -1,7 +1,7 @@
 require 'pathname'
 require 'huginn_agent/helper'
 
-module HuginnAgent
+class HuginnAgent
   class CLI::New
     attr_reader :options, :gem_name, :thor, :target
 

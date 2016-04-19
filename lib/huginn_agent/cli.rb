@@ -1,6 +1,6 @@
 require 'thor'
 
-module HuginnAgent
+class HuginnAgent
   class CLI < Thor
     include Thor::Actions
 

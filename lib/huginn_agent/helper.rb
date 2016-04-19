@@ -1,6 +1,6 @@
 require 'open3'
 
-module HuginnAgent
+class HuginnAgent
   class Helper
     def self.open3(command, streaming_output = true)
       output = ""
