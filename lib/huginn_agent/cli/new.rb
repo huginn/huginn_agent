@@ -3,13 +3,17 @@ require 'huginn_agent/helper'
 
 class HuginnAgent
   class CLI::New
+    PREFIX_QUESTION = "We recommend prefixing all Huginn agent gem names with 'huginn_' to make them easily discoverable.\nPrefix gem name with 'huginn_'?".freeze
+    MIT_QUESTION = "Do you want to license your code permissively under the MIT license?".freeze
+    DOT_ENV_QUESTION = 'Which .env file do you want to use?'.freeze
+
     attr_reader :options, :gem_name, :thor, :target
 
     def initialize(options, gem_name, thor)
       @options = options
       @thor = thor
       if !gem_name.start_with?('huginn_') &&
-         thor.yes?("We recommend prefixing all Huginn agent gem names with 'huginn_' to make them easily discoverable.\nPrefix gem name with 'huginn_'?")
+         thor.yes?(PREFIX_QUESTION)
         gem_name = "huginn_#{gem_name}"
       end
       @target = Pathname.pwd.join(gem_name)
@@ -47,7 +51,7 @@ class HuginnAgent
         "travis.yml.tt" => ".travis.yml"
       }
 
-      if thor.yes?("Do you want to license your code permissively under the MIT license?")
+      if thor.yes?(MIT_QUESTION)
         opts[:mit] = true
         templates.merge!("LICENSE.txt.tt" => "LICENSE.txt")
       end
@@ -66,7 +70,7 @@ class HuginnAgent
           thor.say "#{i+1} #{path}"
         end
 
-        if (i = thor.ask('This .env file do you want to use?').to_i) != 0
+        if (i = thor.ask(DOT_ENV_QUESTION).to_i) != 0
           path = possible_paths[i-1]
           `cp #{path} #{target}`
           thor.say "Copied '#{path}' to '#{target}'"
