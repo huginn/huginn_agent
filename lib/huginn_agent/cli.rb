@@ -1,4 +1,5 @@
 require 'thor'
+require 'huginn_agent/version'
 
 class HuginnAgent
   class CLI < Thor
