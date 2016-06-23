@@ -1,4 +1,4 @@
-# HuginnAgent
+# HuginnAgent [![Build Status](https://travis-ci.org/cantino/huginn_agent.svg?branch=master)](https://travis-ci.org/cantino/huginn_agent)
 
 This is a dependency for new external Huginn Agent Gems.
 
