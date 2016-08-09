@@ -39,7 +39,7 @@ class HuginnAgent
 
     def spec
       Dir.chdir('spec/huginn') do
-        shell_out "bundle exec rspec ../*.rb", 'Running specs ...', true
+        shell_out "bundle exec rspec ../*_spec.rb ../**/*_spec.rb", 'Running specs ...', true
       end
     end
 
