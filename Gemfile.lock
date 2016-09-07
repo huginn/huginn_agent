@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    huginn_agent (0.4.2)
+    huginn_agent (0.4.3)
       thor
 
 GEM
