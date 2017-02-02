@@ -7,8 +7,7 @@ env:
     - DATABASE_ADAPTER=mysql2
     - DATABASE_ADAPTER=postgresql DATABASE_USERNAME=postgres
 rvm:
-- 2.1
-- 2.2
+- 2.2.2
 - 2.3.0
 cache: bundler
 script: bundle exec rake
