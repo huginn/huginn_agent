@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-## [0.5.0] - 2017-02-03
+## [0.5.0] - 2017-02-04
 
 ### Added
 - Generate Agent gem code coverage report with `COVERAGE=true rake spec` and allow to report to coveralls (@stesie)
