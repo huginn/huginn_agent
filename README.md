@@ -45,7 +45,8 @@ HuginnAgent.load_tasks(branch: '<your branch>', remote: 'https://github.com/<git
 
 Make sure to delete the `spec/huginn` directory and re-run `rake` after changing the `remote` to update the Huginn source code.
 
-After the setup is done `rake spec` will only run the tests, without cloning the Huginn source again.
+After the setup is done `rake spec` will only run the tests, without cloning the Huginn source again. To get code
+coverage reports set the `COVERAGE` environment variable: `COVERAGE=true rake spec`
 
 
 ## Contributing
