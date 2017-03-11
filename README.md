@@ -15,7 +15,7 @@ gem install huginn_agent
 Use the provided generator to create a skeleton of the new Agent Gem.
 
 ```shell
-huginn_agent new huginn_aweome_agent
+huginn_agent new huginn_awesome_agent
 ```
 
 You can now start developing the new Agent in `./huginn_awesome_agent`. An example Agent class skeleton is located in `./huginn_awesome_agent/lib/huginn_awesome_agent/awesome_agent.rb`.
@@ -29,7 +29,7 @@ HuginnAgent.register 'path_to/<agent name>_agent'
 HuginnAgent.load 'path_to/concerns/<file name>'
 ```
 
-You can add your Agent Gem to your Huginn instace by adding it the to list of `ADDITIONAL_GEMS` in the `.env` file:
+You can add your Agent Gem to your Huginn instance for testing by adding it the to list of `ADDITIONAL_GEMS` in the Huginn `.env` file:
 
 ```
 ADDITIONAL_GEMS=huginn_awesome_agent(path: /local/path/to/huginn_awesome_agent)
@@ -37,7 +37,7 @@ ADDITIONAL_GEMS=huginn_awesome_agent(path: /local/path/to/huginn_awesome_agent)
 
 ### Running the specs for the Agent Gem
 
-Running `rake` will clone and set up Huginn in `spec/huginn` to run the specs of the Gem in Huginn as if they would be build-in Agents. The desired Huginn repository and branch can be modified in the `Rakefile`:
+Running `rake` will clone and set up Huginn in `spec/huginn` to run the specs of the Gem in Huginn as if it were a builtin Agent. The desired Huginn repository and branch can be modified in the `Rakefile`:
 
 ```ruby
 HuginnAgent.load_tasks(branch: '<your branch>', remote: 'https://github.com/<github user>/huginn.git')
@@ -45,7 +45,7 @@ HuginnAgent.load_tasks(branch: '<your branch>', remote: 'https://github.com/<git
 
 Make sure to delete the `spec/huginn` directory and re-run `rake` after changing the `remote` to update the Huginn source code.
 
-After the setup is done `rake spec` will only run the tests, without cloning the Huginn source again. To get code
+After the setup is done, `rake spec` will only run the tests, without cloning Huginn again. To get code
 coverage reports set the `COVERAGE` environment variable: `COVERAGE=true rake spec`
 
 
