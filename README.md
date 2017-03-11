@@ -48,6 +48,9 @@ Make sure to delete the `spec/huginn` directory and re-run `rake` after changing
 After the setup is done, `rake spec` will only run the tests, without cloning Huginn again. To get code
 coverage reports set the `COVERAGE` environment variable: `COVERAGE=true rake spec`
 
+## Examples
+
+You can see a list of gems using Huginn Agent [here](https://rubygems.org/gems/huginn_agent/reverse_dependencies).
 
 ## Contributing
 
