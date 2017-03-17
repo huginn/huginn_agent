@@ -2,3 +2,4 @@ coverage
 pkg
 *.gem
 spec/sandbox
+Gemfile.lock
