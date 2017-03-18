@@ -48,6 +48,20 @@ Make sure to delete the `spec/huginn` directory and re-run `rake` after changing
 After the setup is done, `rake spec` will only run the tests, without cloning Huginn again. To get code
 coverage reports set the `COVERAGE` environment variable: `COVERAGE=true rake spec`
 
+## Examples
+
+You can see a list of gems using Huginn Agent [on RubyGems.org](https://rubygems.org/gems/huginn_agent/reverse_dependencies).
+
+We're also aware of these additional gems:
+* [huginn_lifx_agents](https://github.com/omniscopeio/huginn_lifx_agents): Huginn agents to interact with your LIFX light blubs
+* [huginn_readability_agent](https://github.com/kreuzwerker/DKT.huginn_readability_agent): The huginn_readability_agent extracts the primary readable content of a website.
+* [huginn_garoon_agents](https://github.com/namutaka/huginn_garoon_agents): Garoon Workflow Agent
+* [huginn_mysql2_agent](https://github.com/yubuylov/huginn_mysql2_agent): Mysql Agent for huginn.
+* [huginn_dkt_curation_agents](https://github.com/kreuzwerker/DKT.huginn_dkt_curation_agents): Agents for doing natural language processing use the DKT APIs.
+* [huginn_freme_enrichment_agents](https://github.com/kreuzwerker/DKT.huginn_freme_enrichment_agents): Agents for doing natural language processing using the FREME APIs.
+* [huginn_website_metadata_agent](https://github.com/kreuzwerker/DKT.huginn_website_metadata_agent): The Huginn WebsiteMetadata Agent extracts metadata from HTML. It supports schema.org microdata, embedded JSON-LD, and the common meta tag attributes.
+* [huginn_naive_bayes_agent](https://github.com/nogre/huginn_naive_bayes_agent): The Huginn Naive Bayes agent uses some incoming Events as a training set for Naive Bayes Machine Learning. Then it classifies Events from other sources accordingly using tags.
+* [huginn_todoist_agent](https://github.com/stesie/huginn_todoist_agent): Huginn agent to add items to your Todoist.
 
 ## Contributing
 
