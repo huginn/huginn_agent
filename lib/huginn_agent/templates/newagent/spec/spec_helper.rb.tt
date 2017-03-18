@@ -1,0 +1,7 @@
+base_path = File.expand_path('../../', __FILE__)
+$LOAD_PATH.unshift "#{base_path}/lib"
+
+require_relative 'huginn/spec/rails_helper'
+
+require '<%= config[:gem_name] %>'
+HuginnAgent.require!

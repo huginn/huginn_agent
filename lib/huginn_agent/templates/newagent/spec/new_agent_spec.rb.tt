@@ -1,5 +1,4 @@
-require 'rails_helper'
-require 'huginn_agent/spec_helper'
+require_relative 'spec_helper'
 
 describe Agents::<%= config[:constant_name] %> do
   before(:each) do

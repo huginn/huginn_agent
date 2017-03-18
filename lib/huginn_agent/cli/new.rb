@@ -44,6 +44,7 @@ class HuginnAgent
         "gitignore.tt" => ".gitignore",
         "lib/new_agent.rb.tt" => "lib/#{namespaced_path}.rb",
         "lib/new_agent/new_agent.rb.tt" => "lib/#{namespaced_path}/#{agent_file_name}.rb",
+        "spec/spec_helper.rb.tt" => "spec/spec_helper.rb",
         "spec/new_agent_spec.rb.tt" => "spec/#{agent_file_name}_spec.rb",
         "newagent.gemspec.tt" => "#{gem_name}.gemspec",
         "Rakefile.tt" => "Rakefile",
