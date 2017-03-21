@@ -57,7 +57,6 @@ class HuginnAgent
       (status, output) = Bundler.with_clean_env do
         ENV['ADDITIONAL_GEMS'] = "#{gem_name}(path: ../../)"
         ENV['RAILS_ENV'] = 'test'
-        ENV['HUGINN_AGENT_SPEC_RUNNER'] = '1'
         HuginnAgent::Helper.open3(command, streaming_output)
       end
 
