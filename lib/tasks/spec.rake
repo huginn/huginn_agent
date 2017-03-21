@@ -10,6 +10,7 @@ desc "Setup Huginn source, install gems and create the database"
 task :prepare do
   runner.clone
   runner.reset
+  runner.patch
   runner.bundle
   runner.database
 end

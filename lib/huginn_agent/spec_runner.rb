@@ -21,6 +21,14 @@ class HuginnAgent
       end
     end
 
+    def patch
+      Dir.chdir('spec/huginn') do
+        open('Gemfile', 'a') do |f|
+          f.puts File.read(File.join(__dir__, 'patches/gemfile_helper.rb'))
+        end
+      end
+    end
+
     def bundle
       if File.exists?('.env')
         shell_out "cp .env spec/huginn"
