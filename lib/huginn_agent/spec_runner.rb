@@ -39,7 +39,7 @@ class HuginnAgent
 
     def spec
       Dir.chdir('spec/huginn') do
-        shell_out "bundle exec rspec -r #{File.join(__dir__, 'patches/coverage.rb')} --pattern ../*_spec.rb,../{[!huginn/]}**/*_spec.rb", 'Running specs ...', true
+        shell_out "bundle exec rspec -r #{File.join(__dir__, 'patches/coverage.rb')} --pattern '../**/*_spec.rb' --exclude-pattern './spec/**/*_spec.rb'", 'Running specs ...', true
       end
     end
 
