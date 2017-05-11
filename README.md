@@ -1,10 +1,10 @@
-# HuginnAgent [![Build Status](https://travis-ci.org/cantino/huginn_agent.svg?branch=master)](https://travis-ci.org/cantino/huginn_agent)
+# HuginnAgent [![Build Status](https://travis-ci.org/huginn/huginn_agent.svg?branch=master)](https://travis-ci.org/huginn/huginn_agent) [![Dependency Status](https://gemnasium.com/huginn/huginn_agent.svg)](https://gemnasium.com/huginn/huginn_agent)
 
 This is a dependency for new external Huginn Agent Gems.
 
 ## Installation
 
-It is recommended to have a [local development setup](https://github.com/cantino/huginn#local-installation) of Huginn running before starting to develop a Huginn Agent Gem.
+It is recommended to have a [local development setup](https://github.com/huginn/huginn#local-installation) of Huginn running before starting to develop a Huginn Agent Gem.
 
 ```shell
 gem install huginn_agent
