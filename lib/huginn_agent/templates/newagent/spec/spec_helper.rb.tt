@@ -1,0 +1,4 @@
+require_relative 'huginn/spec/rails_helper'
+
+require '<%= config[:gem_name] %>'
+HuginnAgent.require!
