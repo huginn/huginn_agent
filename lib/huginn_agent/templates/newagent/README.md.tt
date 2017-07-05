@@ -6,11 +6,13 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
+This gem is run as part of the [Huginn](https://github.com/huginn/huginn) project. If you haven't already, follow the [Getting Started](https://github.com/huginn/huginn#getting-started) instructions there.
+
 Add this string to your Huginn's .env `ADDITIONAL_GEMS` configuration:
 
 ```ruby
 <%=config[:gem_name]%>
-# when only using this agent gem it should look like hits:
+# when only using this agent gem it should look like this:
 ADDITIONAL_GEMS=<%=config[:gem_name]%>
 ```
 
