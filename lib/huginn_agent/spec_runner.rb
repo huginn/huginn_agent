@@ -34,6 +34,9 @@ class HuginnAgent
         shell_out "cp .env spec/huginn"
       end
       Dir.chdir('spec/huginn') do
+        if !File.exists?('.env')
+          shell_out "cp .env.example .env"
+        end
         shell_out "bundle install --without development production -j 4", 'Installing ruby gems ...'
       end
 
