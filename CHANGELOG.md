@@ -10,6 +10,18 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+## [0.6.1] - 2017-09-22
+
+### Added
+
+- Example code for the `working` method when generating a new Agent gem
+
+### Changed
+
+- Use `.env.example` file from Huginn when running the specs and no custom `.env` file is found, allows to run the specs as long as all Huginn dependencies are installed
+
+### Fixed
+
 ## [0.6.0] - 2017-04-12
 
 ### Changed
@@ -71,7 +83,8 @@ All notable changes to this project will be documented in this file.
 - First official and working release
 
 
-[Unreleased]: https://github.com/cantino/huginn_agent/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/cantino/huginn_agent/compare/v0.6.1...HEAD
+[0.6.1]: https://github.com/cantino/huginn_agent/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/cantino/huginn_agent/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/cantino/huginn_agent/compare/v0.4.3...v0.5.0
 [0.4.3]: https://github.com/cantino/huginn_agent/compare/v0.4.2...v0.4.3
