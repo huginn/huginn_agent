@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Andrew Cantino"]
   spec.email         = ["cantino@gmail.com"]
   spec.summary       = %q{Helpers for making new Huginn Agents}
-  spec.homepage      = "https://github.com/cantino/huginn"
+  spec.homepage      = "https://github.com/huginn/huginn"
   spec.license       = "MIT"
 
   spec.files         = Dir['CHANGELOG.md', 'LICENSE.txt', 'lib/**/*', 'bin/*']

@@ -2,4 +2,4 @@
 
 require 'huginn_agent'
 
-HuginnAgent.load_tasks(branch: 'master', remote: 'https://github.com/cantino/huginn.git')
+HuginnAgent.load_tasks(branch: 'master', remote: 'https://github.com/huginn/huginn.git')

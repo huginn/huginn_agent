@@ -6,7 +6,7 @@ class HuginnAgent
 
     def load_tasks(options = {})
       @branch = options[:branch] || 'master'
-      @remote = options[:remote] || 'https://github.com/cantino/huginn.git'
+      @remote = options[:remote] || 'https://github.com/huginn/huginn.git'
       Rake.add_rakelib File.join(File.expand_path('../', __FILE__), 'tasks')
     end
 
