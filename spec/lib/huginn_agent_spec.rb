@@ -15,7 +15,7 @@ describe HuginnAgent do
     it 'sets default values for branch and remote' do
       HuginnAgent.load_tasks
       expect(HuginnAgent.branch).to eq('master')
-      expect(HuginnAgent.remote).to eq('https://github.com/cantino/huginn.git')
+      expect(HuginnAgent.remote).to eq('https://github.com/huginn/huginn.git')
     end
 
     it "sets branch and remote based on the passed options" do

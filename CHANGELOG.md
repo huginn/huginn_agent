@@ -83,11 +83,11 @@ All notable changes to this project will be documented in this file.
 - First official and working release
 
 
-[Unreleased]: https://github.com/cantino/huginn_agent/compare/v0.6.1...HEAD
-[0.6.1]: https://github.com/cantino/huginn_agent/compare/v0.6.0...v0.6.1
-[0.6.0]: https://github.com/cantino/huginn_agent/compare/v0.5.0...v0.6.0
-[0.5.0]: https://github.com/cantino/huginn_agent/compare/v0.4.3...v0.5.0
-[0.4.3]: https://github.com/cantino/huginn_agent/compare/v0.4.2...v0.4.3
-[0.4.2]: https://github.com/cantino/huginn_agent/compare/v0.4.1...v0.4.2
-[0.4.1]: https://github.com/cantino/huginn_agent/compare/v0.4.0...v0.4.1
-[0.4.0]: https://github.com/cantino/huginn_agent/compare/f6e307e2ec1679367ecc43ab265b8f68d6fe12f2...v0.4.0
+[Unreleased]: https://github.com/huginn/huginn_agent/compare/v0.6.1...HEAD
+[0.6.1]: https://github.com/huginn/huginn_agent/compare/v0.6.0...v0.6.1
+[0.6.0]: https://github.com/huginn/huginn_agent/compare/v0.5.0...v0.6.0
+[0.5.0]: https://github.com/huginn/huginn_agent/compare/v0.4.3...v0.5.0
+[0.4.3]: https://github.com/huginn/huginn_agent/compare/v0.4.2...v0.4.3
+[0.4.2]: https://github.com/huginn/huginn_agent/compare/v0.4.1...v0.4.2
+[0.4.1]: https://github.com/huginn/huginn_agent/compare/v0.4.0...v0.4.1
+[0.4.0]: https://github.com/huginn/huginn_agent/compare/f6e307e2ec1679367ecc43ab265b8f68d6fe12f2...v0.4.0
