@@ -53,7 +53,7 @@ coverage reports set the `COVERAGE` environment variable: `COVERAGE=true rake sp
 You can see a list of gems using Huginn Agent [on RubyGems.org](https://rubygems.org/gems/huginn_agent/reverse_dependencies).
 
 We're also aware of these additional gems:
-* [huginn_lifx_agents](https://github.com/omniscopeio/huginn_lifx_agents): Huginn agents to interact with your LIFX light blubs
+* [huginn_lifx_agents](https://github.com/omniscopeio/huginn_lifx_agents): Huginn agents to interact with your LIFX light bulbs
 * [huginn_readability_agent](https://github.com/kreuzwerker/DKT.huginn_readability_agent): The huginn_readability_agent extracts the primary readable content of a website.
 * [huginn_garoon_agents](https://github.com/namutaka/huginn_garoon_agents): Garoon Workflow Agent
 * [huginn_mysql2_agent](https://github.com/yubuylov/huginn_mysql2_agent): Mysql Agent for huginn.
