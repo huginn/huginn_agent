@@ -48,7 +48,7 @@ class HuginnAgent
         "newagent.gemspec.tt" => "#{gem_name}.gemspec",
         "Rakefile.tt" => "Rakefile",
         "README.md.tt" => "README.md",
-        "travis.yml.tt" => ".travis.yml"
+        ".github/workflows/ci.yml.tt" => ".github/workflows/ci.yml"
       }
 
       if thor.yes?(MIT_QUESTION)
