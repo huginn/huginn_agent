@@ -10,7 +10,7 @@ class HuginnAgent
     end
 
     def clone
-      unless File.exists?('spec/huginn/.git')
+      unless File.exist?('spec/huginn/.git')
         shell_out "git clone #{HuginnAgent.remote} -b #{HuginnAgent.branch} spec/huginn", 'Cloning huginn source ...'
       end
     end
@@ -30,11 +30,11 @@ class HuginnAgent
     end
 
     def bundle
-      if File.exists?('.env')
+      if File.exist?('.env')
         shell_out "cp .env spec/huginn"
       end
       Dir.chdir('spec/huginn') do
-        if !File.exists?('.env')
+        if !File.exist?('.env')
           shell_out "cp .env.example .env"
         end
         shell_out "bundle install --without development production -j 4", 'Installing ruby gems ...'
