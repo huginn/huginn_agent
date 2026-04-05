@@ -27,12 +27,7 @@ class HuginnAgent
         require path
       end
       agent_paths.each do |path|
-        if Rails.autoloaders.zeitwerk_enabled?
-          setup_zeitwerk_loader path
-        else
-          require_dependency path
-        end
-
+        setup_zeitwerk_loader path
         Agent::TYPES << "Agents::#{File.basename(path.to_s).camelize}"
       end
     end

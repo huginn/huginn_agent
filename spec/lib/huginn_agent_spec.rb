@@ -37,12 +37,12 @@ describe HuginnAgent do
       HuginnAgent.require!
     end
 
-    it 'requires files passwd to #register and assign adds the class name to Agents::TYPES' do
+    it 'sets up Zeitwerk loader for registered paths and adds the class name to Agent::TYPES' do
       class Agent; TYPES = []; end
-      string_double= double('test_agent.rb', camelize: 'TestAgent')
+      string_double = double('test_agent.rb', camelize: 'TestAgent')
       expect(File).to receive(:basename).and_return(string_double)
       HuginnAgent.register('/tmp/test_agent.rb')
-      expect(HuginnAgent).to receive(:require).with('/tmp/test_agent.rb')
+      expect(HuginnAgent).to receive(:setup_zeitwerk_loader).with('/tmp/test_agent.rb')
       HuginnAgent.require!
       expect(Agent::TYPES).to eq(['Agents::TestAgent'])
     end
