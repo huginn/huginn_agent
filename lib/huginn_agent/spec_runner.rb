@@ -11,13 +11,13 @@ class HuginnAgent
 
     def clone
       unless File.exist?('spec/huginn/.git')
-        shell_out "git clone #{HuginnAgent.remote} -b #{HuginnAgent.branch} spec/huginn", 'Cloning huginn source ...'
+        shell_out "git clone --depth 1 #{HuginnAgent.remote} -b #{HuginnAgent.branch} spec/huginn", 'Cloning huginn source ...'
       end
     end
 
     def reset
       Dir.chdir('spec/huginn') do
-        shell_out "git fetch && git reset --hard origin/#{HuginnAgent.branch}", 'Resetting Huginn source ...'
+        shell_out "git fetch --depth 1 && git reset --hard origin/#{HuginnAgent.branch}", 'Resetting Huginn source ...'
       end
     end
 

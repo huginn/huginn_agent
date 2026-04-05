@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+- Use shallow clone (`--depth 1`) when cloning and fetching the Huginn source for running specs
+
 ### Fixed
 
 - Replace deprecated `File.exists?` with `File.exist?`
