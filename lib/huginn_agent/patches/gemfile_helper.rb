@@ -7,12 +7,9 @@ class GemfileHelper
     gemspec = Dir["#{base_path}/*.gemspec"].first
     previous_gems = Hash[dependencies.map { |dep| [dep.name, dep] }]
     Gem::Specification.load(gemspec).development_dependencies.each do |args|
-      previous_gem = previous_gems[args.name]
-      if previous_gem
-        abort "Gem #{args.to_s} in #{gemspec} conflicts with huginn/Gemfile" unless previous_gem.match?(args.to_spec)
-      else
-        yield args.name, *args.requirements_list
-      end
+      next if previous_gems.key?(args.name)
+
+      yield args.name, *args.requirements_list
     end
   end
 end
