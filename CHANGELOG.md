@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.4] - 2026-04-05
+
+### Changed
+
+- Require registered agent files directly
+
+### Fixed
+
+- Skip duplicate gems from Huginn when loading development dependencies
+
 ## [0.6.3] - 2026-04-05
 
 ### Added
@@ -114,7 +124,8 @@ All notable changes to this project will be documented in this file.
 - First official and working release
 
 
-[Unreleased]: https://github.com/huginn/huginn_agent/compare/v0.6.3...HEAD
+[Unreleased]: https://github.com/huginn/huginn_agent/compare/v0.6.4...HEAD
+[0.6.4]: https://github.com/huginn/huginn_agent/compare/v0.6.3...v0.6.4
 [0.6.3]: https://github.com/huginn/huginn_agent/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/huginn/huginn_agent/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/huginn/huginn_agent/compare/v0.6.0...v0.6.1
