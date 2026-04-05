@@ -37,13 +37,15 @@ class HuginnAgent
         if !File.exist?('.env')
           shell_out "cp .env.example .env"
         end
-        shell_out "bundle install --without development production -j 4", 'Installing ruby gems ...'
+        shell_out "bundle config set --local without 'development production'"
+        shell_out 'bundle install -j 4', 'Installing ruby gems ...'
       end
 
     end
 
     def database
       Dir.chdir('spec/huginn') do
+        remove_schema
         shell_out('bundle exec rake db:create db:migrate', 'Creating database ...')
       end
     end
@@ -75,6 +77,11 @@ class HuginnAgent
         puts output
         fail
       end
+    end
+
+    private
+    def remove_schema
+      File.delete('db/schema.rb') if File.exist?('db/schema.rb')
     end
   end
 end

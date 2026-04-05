@@ -34,4 +34,37 @@ describe HuginnAgent::SpecRunner do
 
     end
   end
+
+  context '#bundle' do
+    before do
+      allow(Dir).to receive(:chdir).with('spec/huginn').and_yield
+      allow(File).to receive(:exist?).and_call_original
+    end
+
+    it 'uses bundle config instead of --without' do
+      allow(File).to receive(:exist?).with('.env').and_return(false)
+
+      expect(runner).to receive(:shell_out).with("cp .env.example .env").ordered
+      expect(runner).to receive(:shell_out).with("bundle config set --local without 'development production'").ordered
+      expect(runner).to receive(:shell_out).with('bundle install -j 4', 'Installing ruby gems ...').ordered
+
+      runner.bundle
+    end
+  end
+
+  context '#database' do
+    before do
+      allow(Dir).to receive(:chdir).with('spec/huginn').and_yield
+      allow(File).to receive(:exist?).and_call_original
+    end
+
+    it 'removes a generated schema before migrating' do
+      allow(File).to receive(:exist?).with('db/schema.rb').and_return(true)
+
+      expect(File).to receive(:delete).with('db/schema.rb').ordered
+      expect(runner).to receive(:shell_out).with('bundle exec rake db:create db:migrate', 'Creating database ...').ordered
+
+      runner.database
+    end
+  end
 end

@@ -1,13 +1,16 @@
 require 'simplecov'
 
 if !ENV['COVERAGE']
-  require 'coveralls'
-  module Coveralls
-    module Configuration
-      def self.root
-	File.expand_path(File.join(Dir.pwd, '../..'))
+  begin
+    require 'coveralls'
+    module Coveralls
+      module Configuration
+        def self.root
+          File.expand_path(File.join(Dir.pwd, '../..'))
+        end
       end
     end
+  rescue LoadError
   end
 end
 
