@@ -10,6 +10,8 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+- Replace deprecated `File.exists?` with `File.exist?`
+
 ## [0.6.1] - 2017-09-22
 
 ### Added
