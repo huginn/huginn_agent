@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe HuginnAgent::SpecRunner do
   unless defined?(Bundler)
-    class Bundler; def self.with_clean_env; yield end end
+    class Bundler; def self.with_unbundled_env; yield end end
   end
 
   let(:runner) {HuginnAgent::SpecRunner.new }

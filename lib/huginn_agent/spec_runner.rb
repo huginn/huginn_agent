@@ -57,7 +57,7 @@ class HuginnAgent
     def shell_out(command, message = nil, streaming_output = false)
       print message if message
 
-      (status, output) = Bundler.with_clean_env do
+      (status, output) = Bundler.with_unbundled_env do
         ENV['ADDITIONAL_GEMS'] = "#{gem_name}(path: ../../)"
         ENV['RAILS_ENV'] = 'test'
         if streaming_output
