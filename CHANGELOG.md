@@ -2,13 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## [0.6.3] - 2026-04-05
 
 ### Added
 
+- Generate a GitHub Actions CI workflow for new Agent gems
+
 ### Changed
 
+- Replace the generated Travis CI config with GitHub Actions
+
 ### Fixed
+
+- Make `SpecRunner` compatible with current Bundler behavior in CI
+- Remove stale `spec/huginn/db/schema.rb` before running database setup
+- Skip Coveralls initialization when the gem is unavailable
 
 ## [0.6.2] - 2026-04-05
 
@@ -106,7 +114,8 @@ All notable changes to this project will be documented in this file.
 - First official and working release
 
 
-[Unreleased]: https://github.com/huginn/huginn_agent/compare/v0.6.2...HEAD
+[Unreleased]: https://github.com/huginn/huginn_agent/compare/v0.6.3...HEAD
+[0.6.3]: https://github.com/huginn/huginn_agent/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/huginn/huginn_agent/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/huginn/huginn_agent/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/huginn/huginn_agent/compare/v0.5.0...v0.6.0
