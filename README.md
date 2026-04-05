@@ -52,16 +52,11 @@ coverage reports set the `COVERAGE` environment variable: `COVERAGE=true rake sp
 
 You can see a list of gems using Huginn Agent [on RubyGems.org](https://rubygems.org/gems/huginn_agent/reverse_dependencies).
 
-We're also aware of these additional gems:
-* [huginn_lifx_agents](https://github.com/omniscopeio/huginn_lifx_agents): Huginn agents to interact with your LIFX light bulbs
-* [huginn_readability_agent](https://github.com/kreuzwerker/DKT.huginn_readability_agent): The huginn_readability_agent extracts the primary readable content of a website.
-* [huginn_garoon_agents](https://github.com/namutaka/huginn_garoon_agents): Garoon Workflow Agent
-* [huginn_mysql2_agent](https://github.com/yubuylov/huginn_mysql2_agent): Mysql Agent for huginn.
-* [huginn_dkt_curation_agents](https://github.com/kreuzwerker/DKT.huginn_dkt_curation_agents): Agents for doing natural language processing use the DKT APIs.
-* [huginn_freme_enrichment_agents](https://github.com/kreuzwerker/DKT.huginn_freme_enrichment_agents): Agents for doing natural language processing using the FREME APIs.
-* [huginn_website_metadata_agent](https://github.com/kreuzwerker/DKT.huginn_website_metadata_agent): The Huginn WebsiteMetadata Agent extracts metadata from HTML. It supports schema.org microdata, embedded JSON-LD, and the common meta tag attributes.
-* [huginn_naive_bayes_agent](https://github.com/nogre/huginn_naive_bayes_agent): The Huginn Naive Bayes agent uses some incoming Events as a training set for Naive Bayes Machine Learning. Then it classifies Events from other sources accordingly using tags.
-* [huginn_todoist_agent](https://github.com/stesie/huginn_todoist_agent): Huginn agent to add items to your Todoist.
+Here are some notable community-maintained gems:
+* [huginn_todoist_agent](https://github.com/stesie/huginn_todoist_agent): Add items to your Todoist
+* [huginn_naive_bayes_agent](https://github.com/nogre/huginn_naive_bayes_agent): Naive Bayes machine learning classifier for events
+* [huginn_mastodon_publish_agent](https://github.com/hihouhou/huginn_mastodon_publish_agent): Publish to Mastodon
+* [huginn_github_notifications_agent](https://github.com/joenas/huginn_github_notifications_agent): Fetch GitHub notifications
 
 ## Contributing
 
