@@ -8,7 +8,16 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+### Fixed
+
+## [0.6.2] - 2026-04-05
+
+### Changed
+
 - Use shallow clone (`--depth 1`) when cloning and fetching the Huginn source for running specs
+- Replace deprecated `Bundler.with_clean_env` with `Bundler.with_unbundled_env`
+- Remove Rails classic loader fallback in favor of Zeitwerk only
+- Loosen development dependency version constraints
 
 ### Fixed
 
@@ -87,7 +96,8 @@ All notable changes to this project will be documented in this file.
 - First official and working release
 
 
-[Unreleased]: https://github.com/huginn/huginn_agent/compare/v0.6.1...HEAD
+[Unreleased]: https://github.com/huginn/huginn_agent/compare/v0.6.2...HEAD
+[0.6.2]: https://github.com/huginn/huginn_agent/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/huginn/huginn_agent/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/huginn/huginn_agent/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/huginn/huginn_agent/compare/v0.4.3...v0.5.0
