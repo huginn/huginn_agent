@@ -1,4 +1,4 @@
-# HuginnAgent [![Build Status](https://travis-ci.org/huginn/huginn_agent.svg?branch=master)](https://travis-ci.org/huginn/huginn_agent) [![Dependency Status](https://gemnasium.com/huginn/huginn_agent.svg)](https://gemnasium.com/huginn/huginn_agent)
+# HuginnAgent [![CI](https://github.com/huginn/huginn_agent/actions/workflows/ci.yml/badge.svg)](https://github.com/huginn/huginn_agent/actions/workflows/ci.yml)
 
 This is a dependency for new external Huginn Agent Gems.
 
