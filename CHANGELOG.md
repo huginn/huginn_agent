@@ -12,15 +12,25 @@ All notable changes to this project will be documented in this file.
 
 ## [0.6.2] - 2026-04-05
 
+### Added
+
+- Define `Rails::Engine` in generated Agent gems (@alessio-signorini)
+- Make compatible with Rails 6 & 7 Zeitwerk loader (@overhacked)
+
 ### Changed
 
-- Use shallow clone (`--depth 1`) when cloning and fetching the Huginn source for running specs
-- Replace deprecated `Bundler.with_clean_env` with `Bundler.with_unbundled_env`
 - Remove Rails classic loader fallback in favor of Zeitwerk only
+- Replace deprecated `Bundler.with_clean_env` with `Bundler.with_unbundled_env`
 - Loosen development dependency version constraints
+- Use shallow clone (`--depth 1`) when cloning and fetching the Huginn source for running specs
+- Migrate CI from Travis to GitHub Actions
+- Add RubyGems trusted publishing workflow
 
 ### Fixed
 
+- Fix invalid argument for `default_schedule` (@sfischer13)
+- Update URLs (@sfischer13)
+- Fix typo in README (@pacharanero)
 - Replace deprecated `File.exists?` with `File.exist?`
 
 ## [0.6.1] - 2017-09-22
