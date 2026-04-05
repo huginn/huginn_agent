@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test-postgresql:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: huginn
+          POSTGRES_PASSWORD: huginn
+          POSTGRES_DB: huginn_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    env:
+      DATABASE_ADAPTER: postgresql
+      DATABASE_HOST: 127.0.0.1
+      DATABASE_USERNAME: huginn
+      DATABASE_PASSWORD: huginn
+      DATABASE_NAME: huginn_test
+      APP_SECRET_TOKEN: 0b4a2a529a3bb09cc39561e117c13d6e04288e144c322b8d577b0e4589435dce8f512a0e0d7e17c54802a5575c92e1e68550cd18
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4"
+          bundler-cache: true
+
+      - name: Run tests
+        run: bundle exec rake
+
+  test-mysql:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: huginn
+          MYSQL_DATABASE: huginn_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    env:
+      DATABASE_ADAPTER: mysql2
+      DATABASE_HOST: 127.0.0.1
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: huginn
+      DATABASE_NAME: huginn_test
+      APP_SECRET_TOKEN: 0b4a2a529a3bb09cc39561e117c13d6e04288e144c322b8d577b0e4589435dce8f512a0e0d7e17c54802a5575c92e1e68550cd18
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4"
+          bundler-cache: true
+
+      - name: Run tests
+        run: bundle exec rake
