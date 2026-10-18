@@ -1,8 +1,7 @@
+extends: .github
+
 queue_rules:
 - name: dependency-updates
-  batch_size: 1
-  checks_timeout: auto
-  merge_method: merge
   queue_conditions:
   - base = master
   - author ~= ^(dependabot|renovate|lockfile-maintenance)\[bot\]$
@@ -17,7 +16,6 @@ queue_rules:
   - '#changes-requested-reviews-by = 0'
   - check-success = Ruby 3.4
   - check-success = Ruby ruby
-  batch_max_wait_time: 1 min
 merge_protections:
 - name: approved-dependency-updates
   if:
@@ -34,4 +32,3 @@ merge_protections_settings:
   - '#changes-requested-reviews-by = 0'
   - check-success = Ruby 3.4
   - check-success = Ruby ruby
-  reporting_method: check-runs
