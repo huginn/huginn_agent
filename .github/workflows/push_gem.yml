@@ -23,20 +23,20 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2  # v2.22.2
+        uses: step-security/harden-runner@v2.22.2
         with:
           egress-policy: audit
 
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: actions/checkout@v7.0.1
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@7f797815d8adceb1c412e7abefdd1ab4abc47a5f  # v1.335.0
+        uses: ruby/setup-ruby@v1.335.0
         with:
           ruby-version: ruby
           bundler-cache: true
 
       - name: Publish to RubyGems
-        uses: rubygems/release-gem@7f9650160c1a4e7989fdc9855807bdbd421d8b6b  # v1.4.1
+        uses: rubygems/release-gem@v1.4.1
 
       - name: Create GitHub release
         run: |
