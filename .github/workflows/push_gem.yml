@@ -15,7 +15,7 @@ jobs:
 
     environment:
       name: rubygems.org
-      url: https://rubygems.org/gems/huginn_agent
+      url: https://rubygems.org/gems/${{ steps.gem.outputs.name }}/versions/${{ steps.gem.outputs.version }}
 
     permissions:
       contents: write
@@ -28,6 +28,8 @@ jobs:
           egress-policy: audit
 
       - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1.335.0
@@ -35,12 +37,37 @@ jobs:
           ruby-version: ruby
           bundler-cache: true
 
+      - name: Read gem metadata
+        id: gem
+        run: |
+          bundle exec ruby -e '
+            spec = Gem::Specification.load(Dir["*.gemspec"].fetch(0))
+            puts "name=#{spec.name}"
+            puts "version=#{spec.version}"
+          ' >> "$GITHUB_OUTPUT"
+
       - name: Publish to RubyGems
         uses: rubygems/release-gem@v1.4.1
 
+  release:
+    needs: push
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-releases
+      url: https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}
+    permissions:
+      contents: write
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2.22.2
+        with:
+          egress-policy: audit
+
       - name: Create GitHub release
-        run: |
-          tag_name="$(git describe --tags --abbrev=0)"
-          gh release create "${tag_name}" --verify-tag --generate-notes
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --generate-notes
