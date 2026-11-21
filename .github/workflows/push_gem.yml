@@ -47,7 +47,7 @@ jobs:
           ' >> "$GITHUB_OUTPUT"
 
       - name: Publish to RubyGems
-        uses: rubygems/release-gem@v1.4.1
+        uses: rubygems/release-gem@v1.4.2
 
   release:
     needs: push
